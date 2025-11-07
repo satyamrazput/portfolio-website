@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Satyam Kumar Singh — Portfolio</title>
+  <meta name="description" content="Portfolio — Satyam Kumar Singh (Aspiring Full‑Stack Developer)" />
+  <style>
+    :root{
+      --bg:#fbfbfb; --ink:#0b1220; --muted:#6b7280; --accent:#111827; --accent-2:#7c3aed;
+      --max:1200px; --radius:18px; --gap:36px; --transition:300ms;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);}
+    a{color:inherit}
+
+    /* Layout - single-frame panels (full viewport height) */
+    header{position:fixed;left:0;right:0;top:0;z-index:60;padding:18px 28px;background:transparent}
+    .nav-wrap{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .logo{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--accent-2),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    nav{display:flex;gap:18px}
+    nav a{font-weight:700;padding:6px 10px;color:var(--muted);text-decoration:none;border-radius:8px}
+    nav a.active{color:var(--accent-2);background:rgba(124,58,237,0.06)}
+
+    main{max-width:var(--max);margin:0 auto}
+    section.panel{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:72px 28px}
+    section.panel .content{padding:20px}
+    .big-title{font-size:clamp(36px,6vw,96px);font-weight:900;margin:0;line-height:0.95}
+    .sub{color:var(--muted);font-weight:700;letter-spacing:2px;margin-top:12px}
+    .lead{color:var(--muted);max-width:60%;margin-top:18px;line-height:1.6}
+
+    /* Large visual area */
+    .visual{display:flex;align-items:center;justify-content:center}
+    .visual img{width:100%;height:80vh;object-fit:cover;border-radius:20px;box-shadow:0 30px 60px rgba(12,15,20,0.08)}
+    .hero-visual img{height:86vh}
+
+    /* large circular portrait used in some panels */
+    .round{width:460px;height:460px;border-radius:50%;overflow:hidden;border:12px solid white;box-shadow:0 30px 60px rgba(12,15,20,0.08)}
+    .round img{width:100%;height:100%;object-fit:cover}
+
+    /* stacked info blocks */
+    .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+    .meta-card{background:white;padding:18px;border-radius:14px;box-shadow:0 12px 30px rgba(12,15,20,0.04)}
+    .meta-card h4{margin:0 0 8px}
+    .skills-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{padding:8px 12px;border-radius:999px;background:#f3f4f6;font-weight:700}
+
+    /* project cards - large images left, text right */
+    .project-large{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+    .device-large{height:520px;border-radius:28px;overflow:hidden}
+    .device-large img{width:100%;height:100%;object-fit:cover}
+
+    /* contact panel center aligned */
+    .contact-box{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .contact-cta{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:12px 18px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);font-weight:800;background:white}
+
+    /* footer */
+    footer{padding:28px;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      section.panel{grid-template-columns:1fr;padding:48px 18px}
+      .visual img{height:60vh}
+      .round{width:320px;height:320px}
+      .lead{max-width:100%}
+      .meta-grid{grid-template-columns:1fr}
+      .project-large{grid-template-columns:1fr}
+      .device-large{height:340px}
+    }
+
+    /* subtle entrance */
+    .fade-in{opacity:0;transform:translateY(8px);transition:opacity var(--transition) ease, transform var(--transition) ease}
+    .fade-in.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="logo">SK</div>
+        <div style="font-weight:800">Satyam Kumar Singh</div>
+      </div>
+      <nav id="site-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO - single-frame with big image on right -->
+    <section id="hero" class="panel" aria-label="Hero">
+      <div class="content fade-in">
+        <h1 class="big-title">Satyam<br/>Kumar Singh</h1>
+        <div class="sub">ASPIRING FULL‑STACK DEVELOPER</div>
+        <p class="lead">College student with a passion for web development — building responsive, accessible web apps using HTML, CSS, JavaScript and backend technologies like Node.js and PHP. I enjoy clean UI and solving practical problems.</p>
+        <div style="margin-top:22px">
+          <a class="btn" href="#projects">Explore Projects</a>
+          <a class="btn" href="mailto:Officialsatyam2@gmail.com">Email Me</a>
+        </div>
+      </div>
+      <div class="visual hero-visual fade-in">
+        <!-- large hero image — replace with your chosen image for strong visual -->
+        <img src="img/152.jpeg" alt="hero visual"/>
+      </div>
+    </section>
+
+    <!-- ABOUT - large circular portrait right, text left -->
+    <section id="about" class="panel">
+      <div class="visual fade-in">
+        <div class="round"><img src="img/151.jpeg" alt="portrait"/></div>
+      </div>
+      <div class="content fade-in">
+        <h2 class="big-title" style="font-size:54px">About</h2>
+        <p class="lead">I thrive on tackling complex challenges and crafting elegant solutions that make a real difference. Focused on full‑stack development with a strong front‑end sensibility.</p>
+
+        <div class="meta-grid">
+          <div class="meta-card">
+            <h4>Who am I?</h4>
+            <p class="lead" style="margin-top:8px;color:var(--muted);">A self‑motivated learner currently pursuing MCA at Lovely Professional University. I enjoy building projects end‑to‑end and improving user experiences.</p>
+          </div>
+          <div class="meta-card">
+            <h4>What I do</h4>
+            <p class="lead" style="margin-top:8px;color:var(--muted);">Create responsive websites, implement backend features with PHP/Node, and work with databases like MySQL.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS - full width image strip and content below -->
+    <section id="skills" class="panel">
+      <div class="content fade-in">
+        <h2 class="big-title" style="font-size:54px">Skills</h2>
+        <div class="lead">Languages, frameworks, and tools I use frequently.</div>
+
+        <div class="meta-grid" style="margin-top:18px">
+          <div class="meta-card">
+            <h4>Languages</h4>
+            <div class="skills-list"><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">C</span><span class="chip">PHP</span></div>
+          </div>
+          <div class="meta-card">
+            <h4>Frameworks & Tools</h4>
+            <div class="skills-list"><span class="chip">HTML & CSS</span><span class="chip">Bootstrap</span><span class="chip">Node.js</span><span class="chip">Angular</span><span class="chip">MySQL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="visual fade-in"><img src="img/software.jpg" alt="skills visual"/></div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="panel">
+      <div class="visual fade-in"><img src="img/certificate123.png" alt="certifications visual"/></div>
+      <div class="content fade-in">
+        <h2 class="big-title" style="font-size:54px">Certifications</h2>
+        <div class="meta-card" style="margin-top:18px">
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>HTML & CSS Zero to Hero — Lets Upgrade (Oct 2023)</li>
+            <li>Community Development Project (Jun 2021)</li>
+            <li>Data Structures & Algorithms — Certification (May 17, 2024)</li>
+            <li>Cod‑A‑FestX 2.0 — 24 hours participation (Oct 18–19, 2025)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS - big device visuals and explanation -->
+    <section id="projects" class="panel">
+      <div class="content fade-in">
+        <h2 class="big-title" style="font-size:54px">Projects</h2>
+        <p class="lead">Selected projects demonstrating full‑stack skills and real‑world impact.</p>
+
+        <div style="margin-top:20px" class="project-large">
+          <div class="device-large"><img src="img/screenshot.png" alt="project device"/></div>
+          <div>
+            <h3>Travel Booking Platform — PHP, MySQL</h3>
+            <p class="lead" style="color:var(--muted)">Dynamic travel booking platform with user authentication, admin panel, pickup/drop functionality, and CRUD operations. Deployed on XAMPP.</p>
+            <div style="margin-top:12px"><a class="btn" href="#contact">View Project</a></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="visual fade-in"><img src="img/proj.png" alt="projects visual"/></div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="panel">
+      <div class="visual fade-in"><img src="img/mix.jpg" alt="achievements visual"/></div>
+      <div class="content fade-in">
+        <h2 class="big-title" style="font-size:54px">Achievements</h2>
+        <div class="meta-card" style="margin-top:18px;color:var(--muted)">
+          <ul style="margin:0;padding-left:18px">
+            <li>Represented city at India International Science Festival — Presented in front of the President & CM (Oct 2021)</li>
+            <li>Co-management lead for "WOW Punjab" event, Lovely Professional University (Sep 2024)</li>
+            <li>Freelanced as AI prompt engineer — earned ≈ ₹2,04,885</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="panel">
+      <div class="content fade-in">
+        <h2 class="big-title" style="font-size:54px">Education</h2>
+        <div style="margin-top:18px" class="meta-grid">
+          <div class="meta-card"><strong>MCA</strong><div style="color:var(--muted);margin-top:6px">Lovely Professional University — Expected Aug 2025</div></div>
+          <div class="meta-card"><strong>BCA</strong><div style="color:var(--muted);margin-top:6px">Lovely Professional University — Aug 2022 (CGPA 6.8)</div></div>
+        </div>
+        <div style="margin-top:18px" class="meta-grid">
+          <div class="meta-card"><strong>Intermidiate (12th)</strong><div style="color:var(--muted);margin-top:6px">SNA EVENING COLLEGE BARH — Expected 2022</div></div>
+          <div class="meta-card"><strong>Matriculation(10th)</strong><div style="color:var(--muted);margin-top:6px">Saraswati Vidya Mandir, Gulabbagh, Barh — Expected 2019</div></div>
+        </div>
+      </div>
+      <div class="visual fade-in"><img src="img/joinus3.jpg" alt="education visual"/></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel">
+      <div class="visual fade-in"><img src="img/contact.jpg" alt="contact visual"/></div>
+      <div class="content fade-in contact-box">
+        <h2 class="big-title" style="font-size:54px">Let's Connect</h2>
+        <div style="color:var(--muted);font-weight:700">+91 7061351996<br/><a href="mailto:Officialsatyam2@gmail.com">Officialsatyam2@gmail.com</a><br/><a href="https://linkedin.com/in/satyam-rajput-4b40b424a">linkedin.com/in/satyam-rajput-4b40b424a</a><br/><a href="https://github.com/satyamrazput">github.com/satyamrazput</a></div>
+        <div class="contact-cta"><a class="btn" href="mailto:Officialsatyam2@gmail.com">Email</a><a class="btn" href="#hero">Back to Top</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © Satyam Kumar Singh — Built with HTML & CSS
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    });
+
+    // Scrollspy: highlight nav link of visible panel
+    const navLinks = document.querySelectorAll('#site-nav a');
+    const panels = document.querySelectorAll('section[id]');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          navLinks.forEach(l=> l.classList.toggle('active', l.getAttribute('href') === '#'+entry.target.id));
+          // reveal animation
+          entry.target.querySelectorAll('.fade-in').forEach(el=> el.classList.add('show'))
+        }
+      })
+    },{threshold:0.35});
+    panels.forEach(p=>io.observe(p));
+
+    // initially show hero
+    document.querySelectorAll('#hero .fade-in').forEach(el=>el.classList.add('show'))
+  </script>
+</body>
+</html>
