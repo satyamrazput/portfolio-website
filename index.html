@@ -74,6 +74,25 @@
     /* subtle entrance */
     .fade-in{opacity:0;transform:translateY(8px);transition:opacity var(--transition) ease, transform var(--transition) ease}
     .fade-in.show{opacity:1;transform:none}
+
+    /* Contact Section Specifics */
+    #contact{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding:60px 28px;background:#ffffff;}
+    #contact .visual{flex:1;min-width:300px;text-align:center;}
+    #contact .visual img{width:100%;max-width:640px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+    #contact .content{flex:1;min-width:300px;padding:30px;text-align:left;}
+    #contact .big-title{color:#000000;margin-bottom:20px;}
+    .contact-details{color:var(--muted);font-weight:700;line-height:2;}
+    .contact-details p{margin:10px 0; display: flex; align-items: center;}
+    .contact-details i{margin-right:20px;font-size:35px;}
+    .contact-details a{color:var(--muted);text-decoration:none;}
+    .contact-details .fa-phone{color:#00bcd4;}
+    .contact-details .fa-envelope{color:#ff9800;}
+    .contact-details .fa-linkedin{color:#0077b5;}
+    .contact-details .fa-github{color:#000000;}
+    #contact .contact-cta{margin-top:30px;display:flex;gap:15px;flex-wrap:wrap;}
+    #contact .btn{padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:background 0.3s;}
+    #contact .btn.email-btn{background:#00bcd4;color:#fff;}
+    #contact .btn.top-btn{background:#333;color:#fff;}
   </style>
 </head>
 <body>
@@ -109,7 +128,7 @@
       </div>
       <div class="visual hero-visual fade-in">
         <!-- large hero image — replace with your chosen image for strong visual -->
-        <img src="img/152.jpeg" alt="hero visual"/>
+        <img src="img/152.jpg" alt="hero visual"/>
       </div>
     </section>
 
@@ -226,6 +245,33 @@
   <div class="visual fade-in" style="flex:1;min-width:300px;text-align:center;">
     <img src="img/contact.jpg" alt="contact visual" style="width:130%;max-width:640px;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.3);" />
   </div>
+    <section id="contact" class="panel">
+      <div class="visual fade-in">
+        <img src="img/contact.jpg" alt="contact visual" />
+      </div>
+      <div class="content fade-in contact-box">
+        <h2 class="big-title" style="font-size:54px;">Let's Connect</h2>
+        <div class="contact-details">
+          <p><i class="fa-solid fa-phone"></i> +91 7061351996</p>
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:Officialsatyam2@gmail.com">Officialsatyam2@gmail.com</a>
+          </p>
+          <p>
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/satyam-rajput-4b40b424a" target="_blank">linkedin.com/in/satyam-rajput-4b40b424a</a>
+          </p>
+          <p>
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/satyamrazput" target="_blank">github.com/satyamrazput</a>
+          </p>
+        </div>
+        <div class="contact-cta">
+          <a class="btn email-btn" href="mailto:Officialsatyam2@gmail.com"><i class="fa-solid fa-paper-plane"></i> Email</a>
+          <a class="btn top-btn" href="#hero"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+        </div>
+      </div>
+    </section>
 
   <div class="content fade-in contact-box" style="flex:1;min-width:300px;padding:30px;text-align:left;">
     <h2 class="big-title" style="font-size:54px;margin-bottom:20px;color:#000000;">Let's Connect</h2>
